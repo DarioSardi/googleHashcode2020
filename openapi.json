@@ -12,8 +12,7 @@
   ],
   "tags": [
     {
-      "name": "NmSubscriptionResource",
-      "description": "Everything about your Pets"
+      "name": "NmSubscriptionResource"
     }
   ],
   "paths": {
@@ -54,8 +53,7 @@
             "required": false,
             "explode": false,
             "schema": {
-              "type": "string",
-              "default": "just testing refs"
+              "$ref": "#/components/schemas/SubscriptionConfig"
             }
           }
         ],
@@ -65,7 +63,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "string"
+                "$ref": "#/components/schemas/ClientSubscriptionInput"
               }
             }
           },
@@ -77,7 +75,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "string"
+                  "$ref": "#/components/schemas/ClientSubscriptionOutput"
                 }
               }
             }
@@ -134,8 +132,7 @@
             "required": false,
             "explode": true,
             "schema": {
-              "type": "string",
-              "default": "just testing refs"
+              "$ref": "#/components/schemas/SubscriptionConfig"
             }
           }
         ],
@@ -145,7 +142,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "string"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ClientSubscriptionOutput"
+                  }
                 }
               }
             }
@@ -194,8 +194,7 @@
             "required": false,
             "explode": true,
             "schema": {
-              "type": "string",
-              "default": "just testing refs"
+              "$ref": "#/components/schemas/SubscriptionConfig"
             }
           }
         ],
@@ -205,7 +204,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "string"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ClientSubscriptionOutput"
+                  }
                 }
               }
             }
@@ -236,7 +238,7 @@
             "example": "FLIGHT_DATA"
           },
           "configuration": {
-            "type": "string"
+            "$ref": "#/components/schemas/SubscriptionConfig"
           }
         },
         "xml": {
@@ -261,7 +263,7 @@
             "example": "FLIGHT_DATA"
           },
           "configuration": {
-            "type": "string"
+            "$ref": "#/components/schemas/SubscriptionConfig"
           }
         },
         "xml": {
